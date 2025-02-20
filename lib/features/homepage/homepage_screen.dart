@@ -3,6 +3,7 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 
 import '../../flavors.dart';
+import '../../generated/l10n.dart';
 
 class HomepageScreen extends StatelessWidget {
   const HomepageScreen({super.key});
@@ -19,6 +20,10 @@ class HomepageScreen extends StatelessWidget {
           children: [
             Text(
               'Hello ${F.title}', // Displaying title dynamically
+              style: TextStyle(fontSize: 24),
+            ),
+            Text(
+              S.current.greeting,
               style: TextStyle(fontSize: 24),
             ),
           ],

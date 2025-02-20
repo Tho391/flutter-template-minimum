@@ -10,5 +10,7 @@ FutureOr<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(ProviderScope(
-      observers: [Log.talkerRiverpodObserver], child: const App()));
+    observers: [Log.talkerRiverpodObserver],
+    child: const App(),
+  ));
 }
