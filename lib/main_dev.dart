@@ -1,8 +1,8 @@
-import 'app/main.dart';
-import 'configs/flavors.dart';
+import 'flavors.dart';
+
+import 'main.dart' as runner;
 
 Future<void> main() async {
   F.appFlavor = Flavor.dev;
-
-  await runMainApp();
+  await runner.main();
 }

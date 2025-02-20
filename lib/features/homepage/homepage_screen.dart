@@ -2,7 +2,7 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 
-import '../../configs/flavors.dart';
+import '../../flavors.dart';
 
 class HomepageScreen extends StatelessWidget {
   const HomepageScreen({super.key});
