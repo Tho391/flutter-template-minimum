@@ -1,0 +1,9 @@
+{
+  "@@locale": "en",
+  "title": "My Flutter App",
+  "greeting": "Hello, welcome to the app!",
+  "@greeting": {
+    "description": "A welcoming greeting for users"
+  },
+  "flavorMessage": "You are using the {flavor} version of the app"
+}

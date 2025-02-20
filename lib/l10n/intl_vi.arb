@@ -1,0 +1,9 @@
+{
+  "@@locale": "vi",
+  "title": "Ứng dụng Flutter của tôi",
+  "greeting": "Chào mừng bạn đến với ứng dụng!",
+  "@greeting": {
+    "description": "Một lời chào đón cho người dùng"
+  },
+  "flavorMessage": "Bạn đang sử dụng phiên bản {flavor} của ứng dụng"
+}
