@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"dart.flutterSdkPath": ".fvm/flutter_sdk",
+		"dart.sdkPath": ".fvm/flutter_sdk/bin/cache/dart-sdk",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll": "explicit",
+			"source.organizeImports": "explicit"
+		},
+		"[dart]": {
+			"editor.formatOnSave": true,
+			"editor.formatOnType": true,
+			"editor.rulers": [80],
+			"editor.selectionHighlight": false,
+			"editor.suggest.snippetsPreventQuickSuggestions": false,
+			"editor.suggestSelection": "first",
+			"editor.tabCompletion": "onlySnippets",
+			"editor.wordBasedSuggestions": "off"
+		},
+		"files.exclude": {
+			"**/.dart_tool": true,
+			"**/.idea": true,
+			"**/.fvm": true,
+			"**/.packages": true,
+			"**/.pub-cache": true,
+			"**/.pub": true,
+			"**/build": true
+		}
+	}
+}

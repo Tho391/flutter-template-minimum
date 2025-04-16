@@ -1,0 +1,8 @@
+{
+  "dart.flutterSdkPath": ".fvm/versions/3.29.2",
+  "dart.testArgs": [
+    "--dart-define=FLAVOR=dev",
+    "--flavor",
+    "dev"
+  ]
+}

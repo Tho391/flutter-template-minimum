@@ -1,0 +1,179 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Flutter Project Rules & AI Assistance Guidelines
+
+This document serves as a centralized guide for maintaining coding standards, project structure, and best practices for our Flutter project, currently named `flutter_template`. It is intended to be used both by developers and by AI-powered tools to ensure that the assistance provided is in line with our project’s needs.
+
+---
+
+## 1. Project Overview
+
+- **Project Name:** flutter_template  
+- **Description:** "A new Flutter project."  
+- **Version:** 0.0.15+1  
+- **Flutter SDK:** ^3.5.4  
+- **Overview:** This project leverages Flutter along with a range of dependencies for state management, networking, logging, and more. It uses flavor configurations for development and production, and it is localized using `flutter_intl`.
+
+---
+
+## 2. Coding Standards
+
+- **General Practices:**  
+  - Follow effective Dart practices and the official Flutter style guide.
+  - Prefer immutable data where possible (use `final` instead of `var`).
+
+- **Widgets & State Management:**  
+  - Use `StatelessWidget` unless stateful behavior is required.
+  - Leverage Flutter Riverpod (`flutter_riverpod` and `riverpod_annotation`) for state management.
+
+- **Naming Conventions:**  
+  - Use lowerCamelCase for variables and functions.
+  - Use UpperCamelCase for classes and widget names.
+
+---
+
+## 3. Dependencies & Preferred Libraries
+
+- **Core Framework:**  
+  - Flutter (with Material Design support)  
+  - flutter_localizations
+
+- **State Management:**  
+  - flutter_riverpod, riverpod_annotation
+
+- **Networking & API:**  
+  - dio
+
+- **Persistence:**  
+  - shared_preferences
+
+- **Logging & Debugging:**  
+  - talker, talker_flutter, talker_dio_logger, talker_riverpod_logger
+
+- **Serialization:**  
+  - freezed, freezed_annotation, json_annotation
+
+- **UI & Navigation:**  
+  - flutter_native_splash  
+  - cached_network_image  
+  - go_router  
+  - flutter_svg
+
+- **Additional Tools:**  
+  - Firebase integrations (firebase_core, firebase_performance)  
+  - Utility libraries such as collection, path, fpdart, equatable, pdfrx, path_provider, share_plus, envied, adaptive_pop_scope
+
+---
+
+## 4. Project Structure & Organization
+
+- **Root Files:** Contains `pubspec.yaml`, flavor configurations, and localization settings.
+- **lib/**  
+  - **screens/**: Top-level screen widgets.
+  - **widgets/**: Reusable UI components.
+  - **models/**: Data models and business logic.
+  - **services/**: API and integration logic.
+  - **l10n/**: Localization ARB files.
+  - **generated/**: Generated Dart localization files.
+- **test/**: Contains unit and widget tests.
+
+---
+
+## 5. Performance Guidelines
+
+- Use `const` constructors wherever applicable.
+- Minimize unnecessary widget rebuilds by optimizing widget trees and using keys correctly.
+- Implement lazy loading techniques for heavy or infrequently used components.
+
+---
+
+## 6. Testing Requirements
+
+- Write unit and widget tests using `flutter_test`.
+- Utilize `mocktail` for mocking dependencies.
+- Strive for a minimum of 80% test coverage.
+- Include snapshot tests where applicable.
+
+---
+
+## 7. Documentation & Error Handling
+
+- **Documentation:**  
+  - Use Dartdoc comments for all public APIs.
+  - Maintain up-to-date README.md files at the project root and within major directories.
+
+- **Error Handling:**  
+  - Use try/catch blocks for asynchronous operations.
+  - Set up a global error handler using `FlutterError.onError`.
+  - Log errors using the configured logging tools (e.g., talker).
+
+---
+
+## 8. Flavor & Localization Configurations
+
+- **Flavor Configurations:**  
+  - Managed by `flutter_flavorizr` with separate settings for **dev** and **prod** flavors.
+  - Each flavor includes specific configurations for Android (applicationId, customConfig, resValues) and iOS (bundleId, buildSettings).
+
+- **Localization:**  
+  - Enabled via `flutter_intl`.
+  - ARB files are located in `lib/l10n` and generated localization files in `lib/generated`.
+  - The main locale is English (`en`).
+
+---
+
+## 9. AI Assistance & Customization
+
+- **Contextual Guidance:**  
+  - Provide AI tools (like Cursor IDE) with the project overview and coding standards to ensure alignment with our requirements.
+- **Consistency:**  
+  - Update this document as the project evolves to keep AI-generated code consistent with our standards.
+- **Integration:**  
+  - Use this file to enforce coding standards, file organization, and best practices through automated checks and code reviews.
+
+---
+
+## 10. Code Generation Standards
+
+When generating code (manually or through AI assistance), ensure that all code follows the linting rules defined in `analysis_options.yaml`, including:
+
+### Core Principles:
+- Use package imports (`always_use_package_imports`) instead of relative imports
+- Avoid empty `else` statements (`avoid_empty_else`)
+- Always declare return types for functions (`always_declare_return_types`)
+- Use camel case for types (`camel_case_types`)
+
+### Style Conventions:
+- Use `final` for all local variables when possible (`prefer_final_locals`)
+- Use `final` for all fields when possible (`prefer_final_fields`)
+- Prefer single quotes for strings (`prefer_single_quotes`)
+- Use const constructors where applicable (`prefer_const_constructors`)
+- Avoid unused constructor parameters (`avoid_unused_constructor_parameters`)
+- Proper ordering of directives (`directives_ordering`)
+- Use string interpolation rather than concatenation (`prefer_interpolation_to_compose_strings`)
+
+### Error Prevention:
+- Always check for proper typing with collections (`iterable_contains_unrelated_type`, `list_remove_unrelated_type`, `unrelated_type_equality_checks`)
+- Cancel subscriptions (`cancel_subscriptions`)
+- Close sink objects (`close_sinks`)
+- Don't throw in finally blocks (`throw_in_finally`)
+- Avoid unnecessary statements (`unnecessary_statements`)
+
+### Flutter Specific:
+- Use keys in widget constructors (`use_key_in_widget_constructors`)
+- Sort child properties last (`sort_child_properties_last`)
+
+### Additional Rules:
+- Apply strict-casts and strict-raw-types as specified in the analyzer settings
+- Exclude generated files from linting analysis
+- Follow proper error handling patterns with empty catches
+
+Any code generated or proposed through AI assistance must adhere to these standards. When implementing new features or refactoring existing code, the linting rules serve as a guide for maintaining consistent code quality throughout the project.
+
+---
+By adhering to these rules, our team ensures that the project remains consistent, maintainable, and optimized. This guide also enables AI-assisted tools to generate code that meets our project’s specific requirements.
+
+Happy coding!

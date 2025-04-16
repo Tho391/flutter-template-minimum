@@ -16,7 +16,12 @@ migrate_working_dir/
 *.iml
 *.ipr
 *.iws
-.idea/
+
+# Exclude everything in the .idea directory
+.idea/*
+
+# But include the runConfigurations directory
+!.idea/runConfigurations/
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
@@ -32,6 +37,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+ios/build/
 
 # Symbolication related
 app.*.symbols
@@ -49,6 +55,7 @@ app.*.map.json
 .env/.env.dev
 .env/.env.qa
 .env/.env.prod
+env.g.dart
 
 /lib/generated/freezed/
 
@@ -57,3 +64,12 @@ app.*.map.json
 /.tmp/
 /.firebase/
 
+coverage/
+
+android/key-dev.properties
+android/key-prod.properties
+
+README-*.md
+ios/fastlane/report.xml
+.scannerwork/
+tests.output

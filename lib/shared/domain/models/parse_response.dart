@@ -19,8 +19,8 @@ class ParseResponse<T> {
       {required T Function(dynamic) modifier}) {
     return ParseResponse<T>(
       success: json['status'] == 'success',
-      status: json['status'],
-      message: json['message'],
+      status: json['status'] as String?,
+      message: json['message'] as String?,
       data: modifier(json),
     );
   }

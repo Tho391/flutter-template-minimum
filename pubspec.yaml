@@ -2,7 +2,7 @@ name: flutter_template
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -45,7 +45,7 @@ dependencies:
   #permission
   permission_handler: ^11.3.1
 
-  #localication
+  #localization
   intl: any
 
   #image
@@ -73,11 +73,12 @@ dependencies:
   go_router: ^14.8.0
 
   #config app
-  collection: ^1.19.1
+  collection: ^1.19.0
 
   path: ^1.9.1
   fpdart: ^1.1.1
-
+  package_info_plus: ^8.3.0
+  envied: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -97,13 +98,16 @@ dev_dependencies:
   riverpod_lint: ^2.6.4
   flutter_flavorizr: ^2.2.3
   flutter_launcher_icons: ^0.14.3
+  envied_generator: ^1.1.1
+  remove_from_coverage: ^2.0.0
+  test_cov_console: ^0.2.2
+  mocktail: ^1.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -154,8 +158,10 @@ flavorizr:
         customConfig:
           minSdkVersion: 30
           targetSdkVersion: 35
+          compileSdk: 35
       ios:
-        bundleId: "com.example.flutter_template.dev"
+        bundleId:
+          "com.example.flutter_template.dev"
           #buildSettings:
           # Development Team is visible in the apple developer portal
           #DEVELOPMENT_TEAM: YOURDEVTEAMID
@@ -169,14 +175,16 @@ flavorizr:
         customConfig:
           minSdkVersion: 30
           targetSdkVersion: 35
+          compileSdk: 35
       ios:
-        bundleId: "com.example.flutter_template"
+        bundleId:
+          "com.example.flutter_template"
           #buildSettings:
           # Development Team is visible in the apple developer portal
           #DEVELOPMENT_TEAM: YOURDEVTEAMID
         #PROVISIONING_PROFILE_SPECIFIER: "Dev-ProvisioningProfile"
 
-  ide: "idea"
+  ide: "vscode"
 
 flutter_intl:
   enabled: true # Set to true to activate the package

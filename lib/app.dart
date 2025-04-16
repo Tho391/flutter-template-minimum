@@ -1,31 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_template/flavors.dart';
+import 'package:flutter_template/generated/l10n.dart';
+import 'package:flutter_template/routes/router.dart';
 
-import '../routes/router.dart';
-import 'flavors.dart';
-import 'generated/l10n.dart';
-
-class App extends StatelessWidget {
+class App extends ConsumerWidget {
   const App({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
       title: F.title,
-      supportedLocales: [
-        Locale('en', ''),
-        Locale('vn', ''),
-      ],
+      supportedLocales: [const Locale('en', '')],
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         S.delegate
       ],
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       routerConfig: router,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

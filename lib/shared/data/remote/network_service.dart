@@ -1,7 +1,6 @@
+import 'package:flutter_template/shared/domain/models/response.dart';
+import 'package:flutter_template/shared/exceptions/http_exception.dart';
 import 'package:fpdart/fpdart.dart';
-
-import '../../domain/models/response.dart';
-import '../../exceptions/http_exception.dart';
 
 abstract class NetworkService {
   String get baseUrl;

@@ -1,8 +1,7 @@
-import 'flavors.dart';
-
-import 'main.dart' as runner;
+import 'package:flutter_template/flavors.dart';
+import 'package:flutter_template/main.dart' as runner;
 
 Future<void> main() async {
   F.appFlavor = Flavor.prod;
-  await runner.main();
+  await runner.runMainApp();
 }

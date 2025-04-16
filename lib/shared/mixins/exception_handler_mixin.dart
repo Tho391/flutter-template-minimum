@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_template/shared/data/remote/remote.dart';
+import 'package:flutter_template/shared/data/remote/network_service.dart';
 import 'package:flutter_template/shared/domain/models/response.dart'
     as response;
 import 'package:flutter_template/shared/exceptions/http_exception.dart';
@@ -16,13 +16,27 @@ mixin ExceptionHandlerMixin on NetworkService {
           {String endpoint = ''}) async {
     try {
       final res = await handler();
-      return Right(
-        response.Response(
-          statusCode: res.statusCode ?? 200,
-          data: res.data,
-          statusMessage: res.statusMessage,
-        ),
-      );
+
+      if (res.statusCode == 200) {
+        return Right(
+          response.Response(
+            statusCode: res.statusCode ?? 200,
+            data: res.data,
+            statusMessage: res.statusMessage,
+            headers: res.headers,
+          ),
+        );
+      } else {
+        final message = res.data['title'] as String? ?? 'Unknown error';
+        final statusCode = res.statusCode;
+        const identifier = '';
+
+        return Left(AppException(
+          message: message,
+          statusCode: statusCode,
+          identifier: identifier,
+        ));
+      }
     } catch (e) {
       String message = '';
       String identifier = '';
@@ -38,7 +52,8 @@ mixin ExceptionHandlerMixin on NetworkService {
 
         case DioException _:
           e as DioException;
-          message = e.response?.data?['message'] ?? 'Internal Error occurred';
+          message = e.response?.data?['message'] as String? ??
+              'Internal Error occurred';
           statusCode = 1;
           identifier = 'DioException ${e.message} \nat  $endpoint';
           break;

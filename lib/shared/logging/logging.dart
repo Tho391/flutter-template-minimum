@@ -20,61 +20,61 @@ class Log {
         'error': 'Error',
         'critical': 'Critical',
       },
-      enabled: kDebugMode,
-      useConsoleLogs: kDebugMode,
+      // ignore: avoid_redundant_argument_values
+      enabled: kDebugMode
     ),
+    
   );
 
   // Dio Logger for HTTP request/response logging
   static TalkerDioLogger dioLogger =
-  TalkerDioLogger(talker: talker, settings: TalkerDioLoggerSettings());
+      TalkerDioLogger(talker: talker);
 
   static TalkerRiverpodObserver talkerRiverpodObserver = TalkerRiverpodObserver(
     talker: talker,
-    settings: TalkerRiverpodLoggerSettings(printStateFullData: true),
   );
 
   static TalkerRouteObserver talkerRouteObserver =
-  TalkerRouteObserver(Log.talker);
+      TalkerRouteObserver(Log.talker);
 
   /// Simple log methods for info, warning, and error levels.
   static void info(
-      dynamic msg, [
-        Object? exception,
-        StackTrace? stackTrace,
-      ]) {
+    dynamic msg, [
+    Object? exception,
+    StackTrace? stackTrace,
+  ]) {
     talker.info(msg, exception, stackTrace);
   }
 
   static void warning(
-      dynamic msg, [
-        Object? exception,
-        StackTrace? stackTrace,
-      ]) {
+    dynamic msg, [
+    Object? exception,
+    StackTrace? stackTrace,
+  ]) {
     talker.warning(msg, exception, stackTrace);
   }
 
   static void error(
-      dynamic msg, [
-        Object? exception,
-        StackTrace? stackTrace,
-      ]) {
+    dynamic msg, [
+    Object? exception,
+    StackTrace? stackTrace,
+  ]) {
     talker.error(msg, exception, stackTrace);
   }
 
   static void debug(
-      dynamic msg, [
-        Object? exception,
-        StackTrace? stackTrace,
-      ]) {
+    dynamic msg, [
+    Object? exception,
+    StackTrace? stackTrace,
+  ]) {
     talker.debug(msg, exception, stackTrace);
   }
 
   static void verbose(
-      dynamic msg, [
-        Object? exception,
-        StackTrace? stackTrace,
-      ]) {
+    dynamic msg, [
+    Object? exception,
+    StackTrace? stackTrace,
+  ]) {
     talker.verbose(msg, exception, stackTrace);
   }
 
