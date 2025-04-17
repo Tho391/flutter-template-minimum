@@ -1,6 +1,5 @@
+import 'package:flutter_template/shared/domain/models/response.dart';
 import 'package:fpdart/fpdart.dart';
-
-import '../domain/models/response.dart';
 
 class AppException implements Exception {
   final String message;

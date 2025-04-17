@@ -1,14 +1,13 @@
 import 'dart:async';
 
+import 'package:flutter_template/shared/data/local/storage_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'storage_service.dart';
 
 class SharedPrefsService implements StorageService {
   SharedPreferences? sharedPreferences;
 
   final Completer<SharedPreferences> initCompleter =
-  Completer<SharedPreferences>();
+      Completer<SharedPreferences>();
 
   @override
   void init() {

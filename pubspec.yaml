@@ -166,6 +166,10 @@ flavorizr:
           # Development Team is visible in the apple developer portal
           #DEVELOPMENT_TEAM: YOURDEVTEAMID
         #PROVISIONING_PROFILE_SPECIFIER: "Dev-ProvisioningProfile"
+      windows:
+        applicationId: "com.example.flutter_template.dev"
+      macos:
+        bundleId: "com.example.flutter_template.dev"
     prod:
       app:
         name: "Example"
@@ -183,6 +187,10 @@ flavorizr:
           # Development Team is visible in the apple developer portal
           #DEVELOPMENT_TEAM: YOURDEVTEAMID
         #PROVISIONING_PROFILE_SPECIFIER: "Dev-ProvisioningProfile"
+      windows:
+        applicationId: "com.example.flutter_template"
+      macos:
+        bundleId: "com.example.flutter_template"
 
   ide: "vscode"
 
